@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .btn{width:200px; height:200px; background:red; color:#fff; display:flex; align-items:center; justify-content:center; font-family:verdana; text-decoration:none;}
+        .name{font-size:20px; font-family:verdana; }
+    </style>
+</head>
+<body>
+    <a href="#" class="btn" id="btn">btn</a>
+    <p class="name">eventName</p>
+</body>
+<script>
+    const btn = document.querySelector('#btn'); 
+    let eventName = '';
+    
+    btn.addEventListener('touchstart', function(e){
+        eventText(e.type)
+    })
+
+    btn.addEventListener('touchmove', function(e){
+        eventText(e.type)
+    })
+
+    btn.addEventListener('touchend', function(e){
+        eventText(e.type)
+    })
+
+    btn.addEventListener('click', function(e){
+        eventText(e.type)
+    })
+
+    btn.addEventListener('mouseover', function(e){
+        eventText(e.type)
+    })
+
+    btn.addEventListener('touchcancel', function(e){
+        eventText(e.type)
+    })
+
+    function eventText(text){
+        const name = document.querySelector('.name'); 
+        eventName += text + '\n';
+        name.innerHTML = eventName + ''; 
+    }
+</script>
+</html>
